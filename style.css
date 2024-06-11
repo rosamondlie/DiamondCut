@@ -64,16 +64,122 @@ body::-webkit-scrollbar {
     color: var(--white);
     margin-left: 5rem ;
     font-size: 1.25rem;
+    transition: 0.3s;
 }
 
 .navbar ul li a:hover{
     color: var(--grey);
+    border-bottom: 2px solid var(--grey);
 }
 
 .navbar a img{
     height: 45px;
     width: 45px;
     margin-left: 5rem;
+}
+
+/* login  */
+.login-section{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5rem;
+}
+
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* min-width: 100%;
+    min-height: 100vh; */
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+}
+
+.login-wrapper{
+    border: 2px solid var(--white);
+    padding: 3rem;
+    display: flex;
+    min-width: 60%;
+    border-radius: 10px;
+    /* background-color: var(--dark-brown); */
+    background: rgba(50, 45, 41,0.8);
+}
+
+.login-wrapper h2{
+    width: 50%;
+    font-size: 3rem;
+    font-weight: 100;
+    color: var(--white);
+    align-content: center;
+}
+
+.form-login{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 50%;
+    padding-left: 2rem;
+    border-left: 2px solid;
+    color: var(--white);
+    align-content: center;
+}
+
+.input-login{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+
+.input-login label{
+    font-size: 1rem;
+}
+
+.input-login input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid var(--white);
+    height: 2rem;
+    outline: none;
+    color: var(--white);
+    font-family: "Marcellus", sans-serif;
+}
+
+.input-button{
+    display: flex;
+    justify-content: center;
+}
+
+.input-button button{
+    padding: 0.7rem 2.5rem;
+    background-color: transparent;
+    border: none;
+    color: var(--white);
+    border-radius: 5px;
+    margin: 10px 0;
+    font-weight: 500;
+    border: 2px solid var(--white);
+    font-family: "Marcellus", sans-serif;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.input-button button:hover{
+    background-color: var(--maroon);
+    border: 2px solid var(--maroon);
+    color: var(--white);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.log {
+    margin-top: 5px;
+    color: rgb(192, 45, 69); 
+    font-size: small;
 }
 
 /* home  */
@@ -351,6 +457,127 @@ body::-webkit-scrollbar {
     background-color: var(--maroon);
     border: 2px solid var(--maroon);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* cars  */
+.cars-intro{
+    height: 60vh;
+    background: url(assets/background/cars/bg.png) no-repeat center;
+    background-size: cover;
+    color: var(--white);
+    align-content: center;
+    padding: 5rem 5rem 0;
+}
+
+.cars-intro h2{
+    font-size: 4rem;
+    font-weight: 100;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cars-intro p{
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+.new-vehicle{
+    width: 100%;
+    background-color: var(--dark-brown);
+    padding: 5rem;
+}
+
+.new-vehicle h1{
+    font-size: 4rem;
+    font-weight: 100;
+    color: var(--white);
+}
+
+.vehicle-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.vehicle-card{
+    width: 29%;
+    border: 2px solid var(--brown);
+    border-radius: 10px;
+    margin-top: 4rem;
+    transition: 0.5s;
+}
+
+.vehicle-card:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    border: 2px solid var(--white);
+    /* background-color: var(--brown); */
+}
+
+.vehicle-card img{
+    width: 100%;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.vehicle-desc{
+    padding: 1.5rem;
+}
+
+.vehicle-desc h2{
+    font-weight: 100;
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.vehicle-desc h6{
+    font-size: 0.625rem;
+    font-weight: 100;
+    color: var(--brown);
+}
+
+.vehicle-desc h4{
+    font-weight: 100;
+    font-size: 1.25rem;
+    color: var(--white);
+}
+
+.vehicle-desc p{
+    font-weight: 100;
+    font-size: 0.8rem;
+    color: var(--white);
+}
+
+.carousel{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-brown);
+    position: relative;
+    overflow: hidden;
+}
+
+.slides{
+    display: flex;
+    gap: 3rem;
+    margin: 5rem 0;
+    background-color: var(--brown);
+}
+
+.carousel h2{
+    margin-top: 10vh;
+    font-size: 3rem;
+    color: var(--white);
+    font-weight: 100;
+    text-align: center;
+}
+
+.slides img{
+    width: 15%;
+    filter: grayscale(100%);
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.slides img:hover{
+    filter: grayscale(0);
 }
 
 /* about  */

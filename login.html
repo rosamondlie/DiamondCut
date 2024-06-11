@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <img class="navbar-logo" src="assets/logo/logo.png" alt="logo">
+        <div class="nav-list">
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="cars.html">Cars</a></li>
+                <li><a href="showroom.html">Showroom</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+            </ul>
+            <a href="login.html"><img src="assets/logo/login.png" alt="profile"></a>
+        </div>
+    </nav>
+    <section class="login-section">
+        <video autoplay muted loop id="bg-video">
+            <source src="assets/background/login/bugatti-chiron-bg.mp4" type="video/mp4">
+        </video>
+        <div class="login-wrapper">
+            <h2>Let’s <br>
+                Unlock <br>
+                Your Luxury <br>
+                Experience! 
+            </h2>
+            <form action="" class="form-login" id="form">
+                <div class="input-login">
+                    <label for="">Username</label>
+                    <input id="username" type="text" placeholder="John Doe" required>
+                    <p class="log" id="error-uname"></p>
+                </div>
+                <div class="input-login">
+                    <label for="">Email</label>
+                    <input id="email" type="text" placeholder="johndoe@gmail.com" required>
+                    <p class="log" id="error-email"></p>
+                </div>
+                <div class="input-login">
+                    <label for="">Phone number</label>
+                    <input id="phone" type="text" placeholder="08xx xxxx xxxx" required>
+                    <p class="log" id="error-phone"></p>
+                </div>
+                <div class="input-login">
+                    <label for="">Password</label>
+                    <input id="pass" type="password" placeholder="********" required>
+                    <p class="log" id="error-pass"></p>
+                </div>
+                <div class="input-login">
+                    <label for="">Confirm password</label>
+                    <input id="con-pass" type="password" placeholder="********" required>
+                    <p class="log" id="error-con-pass"></p>
+                </div>
+                <div class="input-button">
+                    <a href=""><button type="submit">LOGIN</button></a>
+                </div>
+    
+            </form>
+    
+        </div>
+    </section>
+</body>
+</html>
