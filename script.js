@@ -12,38 +12,30 @@ const errorConPass = document.getElementById("error-con-pass")
 
 function validateForm(e){
     e.preventDefault()
-    // if(username.value == ''){
-    //     errorLog.innerHTML = "Fullname ga ke isi brok"
-    //     return;
-    // }
-    const splitted = username.value.split('')
-    if(splitted.length <= 2){
-        errorUname.innerHTML = "Username must contain at least 2 words"
-        return;
+    const splitted = username.value.split(' ')
+    if(splitted.length < 2){
+        errorUname.innerHTML = 'Username must contain at least 2 words'
+    }else{
+        errorUname.innerHTML = ''
     }
-
-    // if(email.value.includes('@') == false){
-    //     errorLog.innerHTML = "Email must contain @"
-    //     return;
-    // }
 
     const keongIndex = email.value.indexOf('@')
     const dotIndex = email.value.indexOf('.')
 
     if(keongIndex == -1) {
         errorEmail.innerHTML = 'Email must contain @'
-        return
-    }
-
-    if(dotIndex == -1) {
+    }else if(dotIndex == -1) {
         errorEmail.innerHTML = 'Email must contain .'
-        return
+    }else if(dotIndex < keongIndex) {
+        errorEmail.innerHTML = '. must be after @' 
+    }else{
+        errorEmail.innerHTML = ''
     }
 
-    if(dotIndex < keongIndex) {
-        errorEmail.innerHTML = '. must be after @'
-        // return   
-    }
+
+    // if(!phone.startsWith('08')){
+    //     errorPhone.innerHTML = "Must start with '08'"
+    // }
 
     var adaHurufBesar = false
     for(const huruf of password.value){
@@ -54,32 +46,16 @@ function validateForm(e){
 
     if(!adaHurufBesar){
         errorPass.innerHTML = "Password must contain at least 1 uppercase"
-        // return;
+    }else{
+        errorPass.innerHTML = ""
     }
 
     if(confirmPassword.value != password.value){
-        errorConPass.innerHTML = "password tidak sama dengan confirm"
-        // return;
+        errorConPass.innerHTML = "Confirm password must same as password"
+    }else{
+        errorConPass.innerHTML = ""
     }
 }
 
 form.addEventListener('submit', validateForm)
 
-
-
-
-// carousel 
-let currentSlide = 0;
-
-function moveSlide(direction) {
-    const slides = document.querySelectorAll('.slide');
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + direction + slides.length) % slides.length;
-    slides[currentSlide].classList.add('active');
-}
-
-// Initialize the first slide
-document.addEventListener('DOMContentLoaded', () => {
-    const slides = document.querySelectorAll('.slide');
-    slides[currentSlide].classList.add('active');
-});

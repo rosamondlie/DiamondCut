@@ -236,7 +236,7 @@ body::-webkit-scrollbar {
     background-position: center;
     background-attachment: no-repeat;
     background-size: cover;
-    transition: 0.5s;
+    transition: 0.5s ease-in-out;
 }
 
 #top-audi-r8:hover{
@@ -251,7 +251,7 @@ body::-webkit-scrollbar {
     background-position: center;
     background-attachment: no-repeat;
     background-size: cover;
-    transition: 0.5s;
+    transition: 0.5s ease-in-out;
 }
 
 #top-rr-phantom:hover{
@@ -266,7 +266,7 @@ body::-webkit-scrollbar {
     background-position: center;
     background-attachment: no-repeat;
     background-size: cover;
-    transition: 0.5s;
+    transition: 0.5s ease-in-out;
 }
 
 #top-porsche-911:hover{
@@ -281,7 +281,7 @@ body::-webkit-scrollbar {
     background-position: center;
     background-attachment: no-repeat;
     background-size: cover;
-    transition: 0.5s;
+    transition: 0.5s ease-in-out;
 }
 
 #top-chevrolet:hover{
@@ -296,7 +296,7 @@ body::-webkit-scrollbar {
     background-position: center;
     background-attachment: no-repeat;
     background-size: cover;
-    transition: 0.5s;
+    transition: 0.5s ease-in-out;
 }
 
 #top-bentley-gt:hover{
@@ -311,7 +311,7 @@ body::-webkit-scrollbar {
     background-position: center;
     background-attachment: no-repeat;
     background-size: cover;
-    transition: 0.5s;
+    transition: 0.5s ease-in-out;
 }
 
 #top-porsche-macan:hover{
@@ -481,6 +481,18 @@ body::-webkit-scrollbar {
     text-align: center;
 }
 
+.nav-cars{
+    background-color: var(--dark-brown);
+    display: flex;
+    gap: 1rem;
+    padding-top: 4rem;
+    justify-content: center;
+}
+
+.nav-cars a, p{
+    text-decoration: none;
+    color: var(--white);
+}
 .new-vehicle{
     width: 100%;
     background-color: var(--dark-brown);
@@ -546,6 +558,15 @@ body::-webkit-scrollbar {
     color: var(--white);
 }
 
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
 .carousel{
     display: flex;
     flex-direction: column;
@@ -554,11 +575,17 @@ body::-webkit-scrollbar {
     overflow: hidden;
 }
 
-.slides{
-    display: flex;
-    gap: 3rem;
-    margin: 5rem 0;
+.slides-wrapper{
     background-color: var(--brown);
+    margin: 5rem 0;
+    white-space: nowrap;
+}
+
+.slides{
+    display: inline-block;
+    gap: 3rem;
+    padding-left: 5rem;
+    animation: 20s slide infinite linear;
 }
 
 .carousel h2{
@@ -567,6 +594,10 @@ body::-webkit-scrollbar {
     color: var(--white);
     font-weight: 100;
     text-align: center;
+}
+
+.slides-wrapper:hover .slides{
+    animation-play-state: paused;
 }
 
 .slides img{
@@ -792,3 +823,124 @@ footer img{
     width: 17px;
 }
 
+.jumbotron{
+    /* width: 100%;
+    height: 100vh;
+    display: flex; */
+    overflow: hidden;
+    
+}
+
+.jumbotron figure{
+    position: relative;
+    width: 500%;
+    margin: 0;
+    left: 0;
+    animation: 20s slider infinite;
+}
+
+.jumbo-slide img{
+    /* width: 100vw;
+    height: 100vh;
+    z-index: -1; */
+    float: left;
+    width: 20%;
+    height: 100vh;
+    filter: brightness(80%);
+    /* position: absolute; */
+}
+
+@keyframes slider {
+    0% {
+        left: 0;
+    }    
+    20% {
+        left: 0;
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    90% {
+        left: -300%;
+    }
+    /* 100% {
+        left: -300%;
+    } */
+}
+
+.jumbo-desc{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 40%;
+    margin-left: 5rem;
+    /* left: 50%; */
+    /* align-items: center; */
+    z-index: 6;
+}
+
+.jumbo-desc h2{
+    z-index: 6;
+    font-size: 6rem;
+    font-weight: 100;
+    color: var(--white);
+    text-align: center;
+}
+
+.jumbo-desc p{
+    z-index: 6;
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.showroom-gallery{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 3rem 0;
+    background-color: var(--dark-brown);
+}
+
+.showroom-gallery h2{
+    font-weight: 100;
+    font-size: 3rem;
+    color: var(--white);
+}
+
+.container-gallery{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.container-gallery img{
+    width: 25%;
+    border-radius: 5px;
+    border: 2px solid var(--white);
+    filter: grayscale(60%);
+    transition: 0.3s ease-in-out;
+}
+
+.container-gallery img:hover{
+    filter: grayscale(0);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+}
+
+
+@media screen and (max-width: 768px) {
+    .top-tier{
+        font-size: 20px;
+    }
+}
